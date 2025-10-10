@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer Section</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+      }
+      .main-div {
+        margin: 13px;
+      }
+      footer {
+        background-color: #343433;
+        color: #fff;
+        padding: 64px 112px 51px 112px;
+        border-radius: 22px 22px 0px 0px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: 363px 235px 225px 225px;
+        gap: 72px;
+      }
+
+      .footer-logo img {
+        margin-bottom: 32px;
+      }
+
+      .footer-logo p {
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -2%;
+        margin-bottom: 32px;
+      }
+
+      .social-icons {
+        gap: 18px;
+        display: flex;
+      }
+
+      .social-icons a img {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .footer-section h3 {
+        color: #faa95e;
+        margin-bottom: 7px;
+        font-size: 28px;
+        line-height: 92%;
+        font-weight: 700;
+      }
+
+      .footer-section p {
+        font-size: 16px;
+        color: #fff;
+        line-height: 24px;
+        letter-spacing: -2%;
+        text-decoration: none;
+        display: block;
+        border-left: 2px solid var(--White, #ffffff);
+        padding-left: 15px;
+      }
+
+      .footer-section a {
+        font-size: 16px;
+        color: #fff;
+        line-height: 19px;
+        padding: 10px;
+        letter-spacing: -2%;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        border-left: 2px solid var(--White, #ffffff);
+        padding-left: 15px;
+      }
+
+      .footer-bottom {
+        background-color: #000;
+        color: white;
+        text-align: center;
+        padding: 13px 0;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 2%;
+        border-radius: 0px 0px 22px 22px;
+      }
+
+      @media (max-width: 900px) {
+        .footer-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        footer {
+          padding: 30px;
+        }
+        .footer-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <footer>
+        <div class="footer-container">
+          <div class="footer-logo">
+            <img
+              src="images/Group 316.svg"
+              alt="Pathway Community Foundation Logo"
+            />
+            <p>
+              Driving innovation and equity through the HBCU Smart Cities
+              Challenge, connecting students and cities to co-create smarter
+              futures.
+            </p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com" target="_blank"
+                ><img src="images/icons8_facebook 1.svg" alt="Facebook"
+              /></a>
+              <a href="https://www.linkedin.com" target="_blank"
+                ><img src="images/icons8_linkedin 1.svg" alt="LinkedIn"
+              /></a>
+              <a href="https://www.instagram.com" target="_blank"
+                ><img src="images/icons8_instagram 1.svg" alt="Instagram"
+              /></a>
+              <a href="https://www.twitter.com" target="_blank"
+                ><img src="images/icons8_twitter 2.svg" alt="Twitter"
+              /></a>
+              <a href="https://www.youtube.com" target="_blank"
+                ><img src="images/icons8_play_button 1.svg" alt="YouTube"
+              /></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>Email</h3>
+            <p>info@Pathwayoz.com</p>
+
+            <h3 style="margin-top: 40px">Location</h3>
+            <p>8601 Six Forks Rd, Suite 400 Raleigh, NC 27615</p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">Programs</a>
+            <a href="#">Impact Reports</a>
+            <a href="#">Contact</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Programs</h3>
+            <a href="#">Smart Cities Program</a>
+            <a href="#">Fellowships</a>
+            <a href="#">City Partnerships</a>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-bottom">
+        © 2025 Pathway Community Foundation. All rights reserved.
+      </div>
+    </div>
+  </body>
+</html>
