@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Fellows, Our Impact</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .section {
+        padding: 83px 0px 83px 74px;
+        background-color: #fff;
+        color: #2f3e1e;
+      }
+      .demo-div {
+        margin-right: 74px;
+      }
+      .tag-btn-fellow {
+        color: #343433;
+        border: 1px solid #343433;
+        border-radius: 24px;
+        padding: 5px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        line-height: 19px;
+        letter-spacing: -2%;
+        background-color: transparent;
+        margin-bottom: 24px;
+      }
+      .section-header h1 {
+        font-size: 55px;
+        font-weight: 400;
+        line-height: 53px;
+        letter-spacing: -6%;
+        color: #3f632f;
+      }
+
+      .section-header p {
+        max-width: 658px;
+        color: #343434;
+        line-height: 26.5px;
+        font-size: 20px;
+      }
+      .section-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-bottom: 26px;
+        gap: 23px;
+        border-bottom: 0.5px solid #676765;
+        margin-bottom: 22px;
+      }
+
+      .tag-btn {
+        color: #3f632f;
+        background-color: #296caa12;
+        border: 1.5px solid var(--Primary-Green, #3f632f);
+        border-radius: 50px;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 19px;
+        letter-spacing: -2%;
+        cursor: pointer;
+        margin-right: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .tag-btn.active {
+        background-color: #faa95e;
+        color: #343434;
+        border: none;
+      }
+
+      .filter-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 43px;
+      }
+
+      .filter-buttons {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .dropdown {
+        cursor: pointer;
+        color: #3f632f;
+        background-color: #296caa12;
+        border: 1.5px solid var(--Primary-Green, #3f632f);
+        border-radius: 50px;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 19px;
+        letter-spacing: -2%;
+      }
+
+      .cards {
+        display: flex;
+        gap: 33px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding-right: 74px;
+        margin-bottom: 43px;
+      }
+
+      .card {
+        flex: 0 0 calc(50% - 28px); /* Two full cards + 20% of third visible */
+        background-color: #f5f5f5;
+        border: 0.5px solid #676765;
+        border-radius: 16px;
+        overflow: hidden;
+        padding: 9px;
+        scroll-snap-align: start;
+      }
+
+      .cards::-webkit-scrollbar {
+        display: none; 
+      }
+
+      .card img {
+        width: 100%;
+        height: 331.52px;
+        margin-bottom: 16px;
+      }
+
+      .card-content {
+        position: relative;
+      }
+
+      .card-title-container {
+        display: flex;
+        align-items: baseline;
+        gap: 19px;
+        margin-bottom: 20px;
+      }
+
+      .card-title {
+        color: #3f632f;
+        font-size: 49.45px;
+        font-weight: 300;
+        line-height: 95%;
+        letter-spacing: -0.07em;
+      }
+      .badge-flex {
+        display: flex;
+        align-items: center;
+        gap: 2.6px;
+      }
+      .place-badge {
+        display: inline-block;
+        background-color: #f2f2f2;
+        border-radius: 17px;
+        border: 1.04px solid #343433;
+        padding: 2.84px 6.24px;
+        font-size: 13.23px;
+        color: #343434;
+        line-height: 95%;
+        letter-spacing: -7%;
+      }
+
+      .card-desc {
+        font-size: 13.3px;
+        color: #343433;
+        line-height: 148%;
+        margin-bottom: 10px;
+      }
+
+      .arrow-img {
+        width: 57px !important;
+        height: 25px !important;
+      }
+
+      .card-content-div {
+        display: flex;
+        align-items: baseline;
+        padding: 21px 17px;
+      }
+
+      .view-btn {
+        display: inline-block;
+        background-color: #3f632f;
+        color: white;
+        border: none;
+        padding: 12px 16px;
+        font-size: 14px;
+        line-height: 19px;
+        border-radius: 12px;
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: -2%;
+      }
+
+      .view-btn:hover {
+        background-color: #3d5128;
+      }
+
+      .view-btn img {
+        margin-left: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .section-header {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .section-header h1 {
+          font-size: 30px;
+        }
+
+        .filter-bar {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section">
+      <div class="demo-div">
+        <button class="tag-btn-fellow">Fellow Demos</button>
+        <div class="section-header">
+          <h1>OUR FELLOWS, OUR <br />IMPACT.</h1>
+          <p>
+            The true measure of our program is in the solutions our fellows
+            build. See how students are tackling real-world urban challenges and
+            creating tangible change in their communities.
+          </p>
+        </div>
+
+        <div class="filter-bar">
+          <div class="filter-buttons">
+            <button class="tag-btn active">All</button>
+            <button class="tag-btn">Mobility</button>
+            <button class="tag-btn">Digital Inclusion</button>
+            <button class="tag-btn">Sustainability</button>
+          </div>
+          <select class="dropdown">
+            <option>All Time</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <img src="images/Frame 1321318512.png" alt="Pipe Census" />
+          <div class="card-content-div">
+            <div class="card-content">
+              <div class="card-title-container">
+                <h3 class="card-title">Pipe Census</h3>
+                <div class="badge-flex">
+                  <span class="place-badge">1st Place</span>
+                  <span class="place-badge">Rocky Mount</span>
+                </div>
+              </div>
+              <p class="card-desc">
+                Pipe Census leverages vision-based AI and industry software APIs
+                to automate the identification, mapping, and classification of
+                underground water infrastructure, transforming a manual,
+                time-consuming process into an efficient digital solution.
+              </p>
+            </div>
+            <img class="arrow-img" src="images/Icon(1).svg" alt="" />
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Frame 1321318512(1).png" alt="Pipe Census" />
+          <div class="card-content-div">
+            <div class="card-content">
+              <div class="card-title-container">
+                <h3 class="card-title">PYRA</h3>
+                <div class="badge-flex">
+                  <span class="place-badge">2nd Place</span>
+                  <span class="place-badge">Winston-Salem</span>
+                </div>
+              </div>
+              <p class="card-desc">
+                PYRA creates an intelligent, centralized planning platform that
+                integrates fire safety data with city development information
+                through ESRI-compatible dashboards and AI-driven analytics for
+                smarter resource allocation.
+              </p>
+            </div>
+            <img class="arrow-img" src="images/Icon(1).svg" alt="" />
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/Frame 1321318512.png" alt="Pipe Census" />
+          <div class="card-content-div">
+            <div class="card-content">
+              <div class="card-title-container">
+                <h3 class="card-title">Pipe Census</h3>
+                <div class="badge-flex">
+                  <span class="place-badge">1st Place</span>
+                  <span class="place-badge">Rocky Mount</span>
+                </div>
+              </div>
+              <p class="card-desc">
+                Pipe Census leverages vision-based AI and industry software APIs
+                to automate the identification, mapping, and classification of
+                underground water infrastructure, transforming a manual,
+                time-consuming process into an efficient digital solution.
+              </p>
+            </div>
+            <img class="arrow-img" src="images/Icon(1).svg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <button class="view-btn">
+        View All Demos <img src="images/arrow-right.svg" alt="" />
+      </button>
+    </section>
+
+    <script>
+      const buttons = document.querySelectorAll(".tag-btn");
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          buttons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
