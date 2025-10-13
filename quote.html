@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotes from City Partners</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        margin: 10px;
+      }
+
+      .partners-section {
+        max-width: 1373px;
+        width: 100%;
+      }
+
+      .partners-section h2 {
+        font-size: 55px;
+        color: #3f632f;
+        line-height: 53px;
+        letter-spacing: -6%;
+        font-weight: 700;
+        margin-bottom: 26px;
+        max-width: 420px;
+      }
+
+      /* FLEX container */
+      .cards-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      /* COMMON card styles */
+      .card {
+        background-color: #3f632f;
+        border: 0.64px solid;
+        color: #fff;
+        line-height: 127%;
+        letter-spacing: 1.5%;
+        border-radius: 17px;
+        padding: 23px;
+        position: relative;
+        border: 2px solid #d0e3d4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .card p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .profile-info-img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .profile-info h4 {
+        font-size: 17px;
+        color: #faa95e;
+        font-weight: 700;
+        line-height: 127%;
+      }
+
+      .profile-info span {
+        font-size: 12px;
+        line-height: 127%;
+        color: #fff;
+      }
+
+      /* Specific card sizes */
+      .card.large {
+        width: 438px;
+      }
+
+      .card.medium {
+        width: 458px;
+      }
+
+      /* Align middle two vertically */
+      .middle-cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      /* VIDEO section */
+      .video-section {
+        margin-top: 30px;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-inline: auto;
+        height: 707px;
+      }
+
+      .video-section iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+
+      .play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .play-btn::before {
+        content: "";
+        border-style: solid;
+        border-width: 12px 0 12px 20px;
+        border-color: transparent transparent transparent #e63946;
+        margin-left: 5px;
+      }
+
+      /* arrows navigation */
+      .arrows {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+      }
+
+      .dot.active {
+        background: #1c6e42;
+      }
+      .vector-img {
+        position: absolute;
+        bottom: 0;
+        right: 0px;
+      }
+
+     /* ---------- RESPONSIVE DESIGN ---------- */
+
+      /* Laptops */
+      @media (max-width: 1200px) {
+        .vector-img {
+            display: none;
+            bottom: 0;
+        right: 0px;
+      }
+        .partners-section h2 {
+          font-size: 45px;
+          max-width: 100%;
+        }
+        .card.large,
+        .card.medium {
+          width: 400px;
+        }
+        .video-section {
+          height: 600px;
+        }
+      }
+
+      /* Tablets */
+      @media (max-width: 992px) {
+        .cards-wrapper {
+          flex-direction: column;
+          align-items: center;
+        }
+        .card.large,
+        .card.medium {
+          width: 80%;
+          height: auto;
+        }
+        .partners-section h2 {
+          text-align: center;
+          font-size: 38px;
+        }
+        .video-section {
+          height: 450px;
+        }
+      }
+
+      /* Mobile landscape */
+      @media (max-width: 768px) {
+        .partners-section h2 {
+          font-size: 32px;
+          line-height: 1.2;
+        }
+        .card {
+          padding: 18px;
+        }
+        .card p {
+          font-size: 13px;
+        }
+        .profile-info h4 {
+          font-size: 15px;
+        }
+        .profile-info span {
+          font-size: 11px;
+        }
+        .video-section {
+          height: 350px;
+        }
+      }
+
+      /* Mobile portrait */
+      @media (max-width: 576px) {
+        .partners-section h2 {
+          font-size: 26px;
+        }
+        .card.large,
+        .card.medium {
+          width: 100%;
+        }
+        .profile {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .video-section {
+          height: 280px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="partners-section">
+      <h2>QUOTES FROM CITY PARTNERS</h2>
+
+      <div class="cards-wrapper">
+        <!-- Left large card -->
+        <div class="card large">
+          <img class="vector-img" src="images/Vector(1).svg" alt="" />
+          <p>
+            "I had the privilege of working with Pathway Community Foundation
+            over a couple of months, and every meeting with them was amazing. We
+            would talk about the challenges, the technology, the people and
+            process of our communities, and their ideas and execution never
+            ceased to amaze me.
+            <br />
+            <br />
+
+            The opportunity to work with these bright minds has been a great
+            experience for myself and our city."
+          </p>
+          <div class="profile">
+            <img
+              class="profile-info-img"
+              src="images/Frame 1000004418.png"
+              alt="Tom"
+            />
+            <div class="profile-info">
+              <h4>Tom Kurecka</h4>
+              <span>Chief Information Officer, City of Winston-Salem</span>
+            </div>
+            <img
+              class="profile-img"
+              src="images/Frame 1000004505.png"
+              alt="logo"
+              class="logo"
+            />
+          </div>
+        </div>
+
+        <!-- Middle two small cards -->
+        <div class="middle-cards">
+          <div class="card medium">
+            <p>
+              “I was just blown away by what they were able to accomplish. I
+              didn’t know what type of solution that they were going to provide.
+              I was amazed to see that there was something that could actually
+              be utilized at the ond of this project and program.”
+            </p>
+
+            <div class="profile">
+              <img
+                class="profile-info-img"
+                src="images/Frame 1000004417.png"
+                alt="Tom"
+              />
+              <div class="profile-info">
+                <h4>Shantell McClam</h4>
+                <span
+                  >Neighborhood Services Director for the City of Wiinston-Salem
+                </span>
+              </div>
+              <img
+                class="profile-img"
+                src="images/Frame 1000004505.png"
+                alt="logo"
+                class="logo"
+              />
+            </div>
+          </div>
+
+          <div class="card medium">
+            <p>
+              "Myself and my staff really enjoyed being a part of the program
+              this year. It was truly unreal. Those students are so creative.
+              I’m looking forward to working with them again next year. "
+            </p>
+            <div class="profile">
+              <img
+                class="profile-info-img"
+                src="images/1700579039565 1.png"
+                alt="Tom"
+              />
+              <div class="profile-info">
+                <h4>Darvin Moore</h4>
+                <span>Fire Dept. Chief for City of Rocky Mount</span>
+              </div>
+              <img
+                class="profile-img"
+                src="images/Frame 1000004521.png"
+                alt="logo"
+                class="logo"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right large card -->
+        <div class="card large">
+          <img class="vector-img" src="images/Vector(1).svg" alt="" />
+
+          <p>
+            "As the council person for District 1 in the City of Tuskegee, which
+            represents Tuskegee University, as the Council liaison for the HBCU
+            Smart Cities Challenge, as a Tuskegee native, and as a Tuskegee
+            Institute, (now University) alumnae, I am delighted to be a part of
+            this collaboration.
+          </p>
+          <div class="profile">
+            <img
+              class="profile-info-img"
+              src="images/Frame 1000004418(1).png"
+              alt="Tom"
+            />
+            <div class="profile-info">
+              <h4>Dionna Smith</h4>
+              <span>Chief Diversity & Public Affairs Officer GoGuardian </span>
+            </div>
+            <img
+              class="profile-img"
+              src="images/Frame 1000004505(1).png"
+              alt="logo"
+              class="logo"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Section -->
+      <div class="video-section">
+        <iframe
+          src="https://www.youtube.com/embed/tgbNymZ7vqY"
+          title="YouTube video"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="arrows">
+        <img src="images/Add-ons(1).svg" alt="" />
+        <img src="images/Add-ons.svg" alt="" />
+      </div>
+    </section>
+
+    <script>
+      const arrows = document.querySelectorAll(".dot");
+      arrows.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          arrows.forEach((d) => d.classList.remove("active"));
+          dot.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
