@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What We Do Section (Responsive)</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #ffffff;
+        color: #222;
+        padding: 50px 60px;
+        overflow-x: hidden;
+      }
+
+      /* ========= HEADER SECTION ========= */
+      .tag-btn-fellow {
+        color: #343433;
+        border: 1px solid #343433;
+        border-radius: 24px;
+        padding: 5px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        background-color: transparent;
+        margin-bottom: 24px;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-bottom: 26px;
+        gap: 23px;
+        border-bottom: 0.5px solid #676765;
+        margin-bottom: 22px;
+      }
+
+      .section-header h1 {
+        font-size: 55px;
+        font-weight: 400;
+        line-height: 53px;
+        color: #3f632f;
+      }
+
+      .section-header p {
+        max-width: 658px;
+        color: #343434;
+        line-height: 26.5px;
+        font-size: 20px;
+      }
+
+      .section-container {
+        max-width: 1337px;
+      }
+
+      /* ========= SCROLL CONTAINER ========= */
+      .outer-wrapper {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+      }
+
+      .cards-container {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 10px;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .cards-container::-webkit-scrollbar {
+        height: 0;
+      }
+
+      /* ========= CARD ========= */
+      .card {
+        flex: 0 0 90%;
+        max-width: 1289px;
+        background: #264021;
+        color: #ffffff;
+        border-radius: 20px;
+        padding: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        scroll-snap-align: start;
+      }
+
+      .card-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .card-width {
+        flex: 1;
+        min-width: 420px;
+        max-width: 500px;
+      }
+
+      .card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .card-number {
+        font-size: 24px;
+        background: #ffffff;
+        color: #3f632f;
+        font-weight: 700;
+        border-radius: 6px;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card h2 {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 20px 0 10px;
+      }
+
+      .card p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        border: none;
+        outline: none;
+        background: #3f632f;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 14px;
+        padding: 12px 16px;
+        cursor: pointer;
+        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      iframe {
+        border: 1px solid #faa95e;
+        border-radius: 16px;
+        flex: 1;
+        min-width: 500px;
+        height: 376px;
+        max-height: 100%;
+      }
+
+      /* ========= RESPONSIVE ========= */
+
+      /* Tablets & smaller laptops */
+      @media (max-width: 1200px) {
+        body {
+          padding: 40px;
+        }
+
+        .card {
+          flex: 0 0 85%;
+          padding: 35px;
+        }
+
+        .section-header h1 {
+          font-size: 42px;
+        }
+
+        .section-header p {
+          font-size: 18px;
+        }
+
+        .card h2 {
+          font-size: 38px;
+        }
+
+        iframe {
+          min-width: 400px;
+          height: 300px;
+        }
+      }
+
+      /* Tablets & large phones */
+      @media (max-width: 900px) {
+        .card-flex {
+          flex-direction: column;
+        }
+
+        .card h2 {
+          font-size: 32px;
+        }
+
+        .card-width {
+          min-width: 100%;
+        }
+
+        iframe {
+          width: 100%;
+          min-width: unset;
+          height: 260px;
+        }
+      }
+
+      /* Small phones */
+      @media (max-width: 600px) {
+        body {
+          padding: 25px 16px;
+        }
+
+        .section-header h1 {
+          font-size: 32px;
+          line-height: 1.2;
+        }
+
+        .section-header p {
+          font-size: 15px;
+          line-height: 1.5;
+        }
+
+        .card {
+          flex: 0 0 100%;
+          padding: 24px;
+        }
+
+        .card h2 {
+          font-size: 26px;
+        }
+
+        .card-number {
+          width: 38px;
+          height: 38px;
+          font-size: 20px;
+        }
+
+        iframe {
+          width: 100%;
+          height: 220px;
+        }
+
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      /* Extra small phones */
+      @media (max-width: 400px) {
+        .section-header h1 {
+          font-size: 26px;
+        }
+        .card h2 {
+          font-size: 22px;
+        }
+        iframe {
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="section-container">
+      <button class="tag-btn-fellow">Fellow Demos</button>
+      <div class="section-header">
+        <h1>OUR STORY</h1>
+        <p>The journey of Pathway Community Foundation</p>
+      </div>
+    </div>
+
+    <div class="outer-wrapper">
+      <div class="cards-container" id="scrollSection">
+        <!-- CARD 1 -->
+        <div class="card">
+          <div class="card-flex">
+            <div class="card-width">
+              <div class="card-top">
+                <div class="card-number">01</div>
+              </div>
+              <h2>Build Smart Solutions</h2>
+              <p>
+                This inaugural Smart City challenge encourages HBCU developers,
+                entrepreneurs, designers, and engineers to develop tech
+                solutions that leverage ICT and IoT technology.
+              </p>
+              <button class="btn">
+                Register for Event <img src="images/arrow-right.svg" alt="" />
+              </button>
+            </div>
+            <iframe
+              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+              title="YouTube video"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+          <div class="card-flex">
+            <div class="card-width">
+              <div class="card-top">
+                <div class="card-number">02</div>
+              </div>
+              <h2>Empower Students</h2>
+              <p>
+                We provide opportunities for students to showcase their
+                innovations while connecting with mentors and industry leaders.
+              </p>
+              <button class="btn">
+                Register for Event <img src="images/arrow-right.svg" alt="" />
+              </button>
+            </div>
+            <iframe
+              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+              title="YouTube video"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+          <div class="card-flex">
+            <div class="card-width">
+              <div class="card-top">
+                <div class="card-number">03</div>
+              </div>
+              <h2>Transform Communities</h2>
+              <p>
+                Through partnerships with universities and organizations, we
+                deliver impactful smart city projects that improve lives.
+              </p>
+              <button class="btn">Contact Us →</button>
+            </div>
+            <iframe
+              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+              title="YouTube video"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const scrollSection = document.getElementById("scrollSection");
+      scrollSection.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        scrollSection.scrollLeft += e.deltaY;
+      });
+    </script>
+  </body>
+</html>

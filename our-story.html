@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Story Section</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #fff;
+        color: #222;
+        padding: 50px 80px;
+        overflow-x: hidden;
+      }
+
+      .tag-btn-fellow {
+        color: #343433;
+        border: 1px solid #343433;
+        border-radius: 24px;
+        padding: 5px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        line-height: 19px;
+        background-color: transparent;
+        margin-bottom: 24px;
+      }
+
+      .section-header h1 {
+        font-size: 55px;
+        font-weight: 400;
+        line-height: 53px;
+        color: #3f632f;
+      }
+
+      .section-header p {
+        max-width: 658px;
+        color: #343434;
+        line-height: 26.5px;
+        font-size: 20px;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-bottom: 26px;
+        gap: 23px;
+        border-bottom: 0.5px solid #676765;
+        margin-bottom: 22px;
+      }
+
+      .section-container {
+        max-width: 1337px;
+      }
+
+      /* MAIN WRAPPER */
+      .outer-wrapper {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      /* SCROLLABLE CARD WRAPPER */
+      .story-container {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 10px;
+        width: calc((442px * 3) + (0.2 * 442px) + (20px * 3));
+      }
+
+      .story-container::-webkit-scrollbar {
+        height: 0;
+      }
+
+      .story-card {
+        flex: 0 0 442px;
+        border: 0.5px solid #676765;
+        border-radius: 16px;
+        padding: 9px;
+        background: #f5f5f5;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+      }
+
+      .image-placeholder {
+        width: 100%;
+        height: 130px;
+        background: #00000017;
+        backdrop-filter: blur(3.5px);
+        border-radius: 13px;
+        margin-bottom: 15px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .year-badge {
+        background: #4d82361a;
+        color: #3f632f;
+        font-size: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 36px;
+        padding: 6px 12px;
+        font-weight: 600;
+        line-height: 1;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        background: #3f632f;
+        border-radius: 50%;
+      }
+
+      .story-card h3 {
+        font-size: 26px;
+        color: #3f632f;
+        margin-bottom: 10px;
+        display: flex;
+        line-height: 1.1;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .story-card p {
+        font-size: 13.3px;
+        color: #343433;
+        line-height: 1.5;
+      }
+
+      .arrow-img {
+        width: 57px !important;
+        height: 25px !important;
+      }
+
+      /* ================= RESPONSIVE DESIGN ================= */
+
+      /* Tablet: show 2 full + peek */
+      @media (max-width: 1200px) {
+        .story-container {
+          width: calc((400px * 2) + (0.2 * 400px) + (20px * 2));
+        }
+        .story-card {
+          flex: 0 0 400px;
+        }
+        .section-header h1 {
+          font-size: 45px;
+        }
+        .section-header p {
+          font-size: 18px;
+        }
+      }
+
+      /* Mobile: show 1 full card only */
+      @media (max-width: 768px) {
+        body {
+          padding: 30px 20px;
+        }
+        .story-container {
+          width: 100%;
+          gap: 16px;
+        }
+        .story-card {
+          flex: 0 0 100%;
+        }
+        .section-header h1 {
+          font-size: 36px;
+          line-height: 40px;
+        }
+        .section-header p {
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+
+      /* Small mobile */
+      @media (max-width: 480px) {
+        .story-card h3 {
+          font-size: 22px;
+        }
+        .year-badge {
+          font-size: 14px;
+          padding: 4px 8px;
+        }
+        .arrow-img {
+          width: 40px !important;
+          height: 20px !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="section-container">
+      <button class="tag-btn-fellow">Fellow Demos</button>
+      <div class="section-header">
+        <h1>OUR STORY</h1>
+        <p>The journey of Pathway Community Foundation</p>
+      </div>
+    </div>
+
+    <div class="outer-wrapper">
+      <div class="story-container" id="storyScroll">
+        <div class="story-card">
+          <div class="image-placeholder">
+            <div class="year-badge">
+              <div class="dot"></div>
+              2018
+            </div>
+          </div>
+          <h3>
+            The Beginning
+            <img class="arrow-img" src="images/Icon(1).svg" alt="" />
+          </h3>
+          <p>
+            Pathway Community Foundation was established with a vision to bridge
+            the gap between HBCUs and urban development opportunities.
+          </p>
+        </div>
+
+        <div class="story-card">
+          <div class="image-placeholder">
+            <div class="year-badge">
+              <div class="dot"></div>
+              2020
+            </div>
+          </div>
+          <h3>
+            First Smart Cities Challenge
+            <img class="arrow-img" src="images/Icon(1).svg" alt="" />
+          </h3>
+          <p>
+            We launched our inaugural HBCU Smart Cities Challenge, bringing
+            together students from 12 HBCUs to develop innovative solutions for
+            urban challenges.
+          </p>
+        </div>
+
+        <div class="story-card">
+          <div class="image-placeholder">
+            <div class="year-badge">
+              <div class="dot"></div>
+              2022
+            </div>
+          </div>
+          <h3>
+            Expansion
+            <img class="arrow-img" src="images/Icon(1).svg" alt="" />
+          </h3>
+          <p>
+            Our programs expanded to include workforce development initiatives,
+            creating pathways for HBCU students to enter smart city careers.
+          </p>
+        </div>
+
+        <div class="story-card">
+          <div class="image-placeholder">
+            <div class="year-badge">
+              <div class="dot"></div>
+              2024
+            </div>
+          </div>
+          <h3>
+            Next Chapter
+            <img class="arrow-img" src="images/Icon(1).svg" alt="" />
+          </h3>
+          <p>
+            Today, our foundation continues to build innovative programs
+            transforming communities nationwide through HBCU partnerships.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
