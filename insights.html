@@ -265,6 +265,31 @@
       .scroll-btn.rotate img {
         transform: rotate(180deg);
       }
+      .view-btn {
+        display: inline-block;
+        background-color: #3f632f;
+        color: white;
+        border: none;
+        padding: 12px 16px;
+        font-size: 14px;
+        line-height: 19px;
+        border-radius: 12px;
+        display: flex;
+        margin: 62px auto;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: -2%;
+      }
+
+      .view-btn:hover {
+        background-color: #3d5128;
+      }
+
+      .view-btn img {
+        margin-left: 10px;
+      }
     </style>
   </head>
   <body>
@@ -378,6 +403,9 @@
       <div class="scroll-btn" id="scrollBtn">
         <img src="images/Icon(2).svg" alt="Scroll Arrow" />
       </div>
+      <button class="view-btn">
+        See Our City Partnerships <img src="images/arrow-right.svg" alt="" />
+      </button>
     </div>
 
     <script>

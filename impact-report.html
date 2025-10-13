@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impact Report Section</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .section-container {
+        max-width: 1488px;
+        padding: 55px 53px;
+        margin: auto;
+      }
+      .main-container {
+        max-width: 1097px;
+      }
+      .tag {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: -2%;
+        padding: 5px 16px;
+        border-radius: 20px;
+        background-color: #fff;
+        border: 1px solid #343433;
+        color: #343433;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        color: #3f632f;
+        font-size: 55px;
+        line-height: 53px;
+        letter-spacing: -6%;
+        font-weight: 400;
+        margin-bottom: 12px;
+      }
+
+      p.subtitle {
+        font-size: 18px;
+        color: #343433;
+        margin-bottom: 31px;
+      }
+
+      .report-section {
+        display: grid;
+        grid-template-columns: 1.2fr 2fr;
+        gap: 25px;
+        align-items: stretch;
+      }
+
+      .main-card {
+        position: relative;
+        background: #27411f;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 553px;
+        width: 553px;
+      }
+      .impact-button {
+        border: 2px solid #f2f2f2;
+        background: #0000002b;
+        padding: 5px 16px;
+        border-radius: 24px;
+        color: #f2f2f2;
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: 800;
+      }
+      .book-img {
+        border-radius: 10px;
+        margin-bottom: 15px;
+        position: absolute;
+      }
+
+      .main-card h2 {
+        font-size: 28px;
+        line-height: 28px;
+        font-weight: 700;
+        color: #e6e6e5;
+        margin-bottom: 11px;
+        position: absolute;
+        top: 40%;
+        width: 230px;
+      }
+
+      .main-card .stats {
+        display: flex;
+        color: #e6e6e5;
+        gap: 9px;
+        margin-top: 300px;
+        flex-wrap: wrap;
+        font-size: 15px;
+        line-height: 23px;
+        margin-bottom: 11px;
+      }
+
+      .main-card .stats strong {
+        color: #e6e6e5;
+        font-weight: 71%;
+        font-size: 42px;
+      }
+
+      .main-card .stats div {
+        flex: 1;
+        padding: 19px;
+        border: 0.5px solid #e6e6e5;
+        background-color: #0000000d;
+        border-radius: 12px;
+      }
+
+      .download-button {
+        display: inline-block;
+        background-color: #3f632f;
+        color: white;
+        border: none;
+        padding: 12px 16px;
+        font-size: 14px;
+        line-height: 19px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: -2%;
+        height: 48px;
+      }
+
+      .download-button:hover {
+        background-color: #3d5128;
+      }
+
+      .download-button img {
+        width: 24px;
+        height: 24px;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+      .scroll-cards {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 15px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.scroll-cards::-webkit-scrollbar {
+  display: none; 
+}
+
+
+      .scroll-cards::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 5px;
+      }
+
+      .card {
+        flex: 0 0 329px; 
+        border: 0.5px solid #676765;
+        border-radius: 16px;
+        padding: 10px;
+        background: #ffffffb2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 195px;
+        scroll-snap-align: start;
+      }
+
+      /* Create space so 4th card shows half */
+      .scroll-cards::after {
+        content: "";
+        flex: 0 0 50%; /* makes the 4th card show half */
+      }
+
+      .card-number {
+        border: 1px solid #343433;
+        font-size: 20px;
+        width: fit-content;
+        font-weight: 700;
+        padding: 6px;
+        height: 49px;
+        width: 49px;
+        align-items: center;
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: center;
+        border-radius: 11px;
+      }
+      .main-card .card-number {
+        border: 1px solid #f2f2f2;
+        font-size: 20px;
+        width: fit-content;
+        font-weight: 700;
+        padding: px;
+        height: 49px;
+        width: 49px;
+        align-items: center;
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: center;
+        border-radius: 11px;
+      }
+      .card h3 {
+        padding-top: 83px;
+        font-size: 23px;
+        font-weight: 500;
+        margin-bottom: 18px;
+        color: #343433;
+      }
+
+      .card button {
+        background: #4d823614;
+        border: 1px solid var(--Primary-Green, #3f632f);
+        color: #3f632f;
+        padding: 8px 16px;
+        border-radius: 24px;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: -2%;
+        align-self: flex-start;
+      }
+      .button-flex {
+        display: flex;
+        align-items: last baseline;
+        justify-content: space-between;
+      }
+      .view-all {
+        display: inline-block;
+        background-color: #3f632f;
+        color: white;
+        border: none;
+        padding: 12px 16px;
+        font-size: 14px;
+        line-height: 19px;
+        border-radius: 12px;
+        display: flex;
+        margin-left: auto;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: -2%;
+      }
+
+      .view-all:hover {
+        background-color: #3d5128;
+      }
+
+      .view-all img {
+        margin-left: 10px;
+      }
+      .bottom-text {
+        font-size: 15px;
+        color: #343433;
+        font-weight: 500;
+        line-height: 23px;
+        max-width: 319px;
+      }
+
+      .fellows {
+        background: #ffffffb2;
+        border: 0.5px solid #676765;
+        border-radius: 10px;
+        padding: 18px 26px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 25px;
+      }
+      .fellows img {
+        width: 177px;
+      }
+
+      .fellows .info {
+        max-width: 70%;
+      }
+
+      .fellows .info h3 {
+        font-size: 23px;
+        color: #343433;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .fellows .info p {
+        font-size: 15px;
+        color: #4d4d4c;
+        line-height: 23px;
+        font-weight: 500;
+      }
+
+      .fellows button {
+        background: #4d823614;
+        border: 1px solid var(--Primary-Green, #3f632f);
+        color: #3f632f;
+        padding: 8px 16px;
+        border-radius: 24px;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: -2%;
+      }
+
+      @media (max-width: 900px) {
+        .report-section {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section-container">
+      <div class="main-container">
+        <div class="tag">Impact Report</div>
+        <h1>SEE THE CHANGE WE’RE MAKING</h1>
+        <p class="subtitle">
+          Our latest report highlights fellows’ work across transportation,
+          digital equity, and sustainability — with measurable outcomes across
+          multiple states.
+        </p>
+      </div>
+
+      <div class="report-section">
+        <div class="main-card">
+          <div class="button-flex">
+            <div class="card-number">01</div>
+            <button class="impact-button">Impact report</button>
+          </div>
+          <img class="book-img"
+            src="images/Free_A4_Brochure_Mockup_5_1-removebg-preview.png"
+            alt="Report Cover"
+          />
+          <h2>2025 HBCU SMART CITIES IMPACT REPORT</h2>
+          <div class="stats">
+            <div><strong>85%</strong><br />ready to scale city pilots</div>
+            <div><strong>40+</strong><br />Cities engaged nationwide</div>
+            <div><strong>200+</strong><br />Fellows trained in innovation</div>
+          </div>
+          <div>
+            <button class="download-button">
+              Download Report
+              <img src="images/Download.svg" alt="" />
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div class="scroll-cards" id="scrollCards">
+            <div class="card">
+              <h2 class="card-number">02</h2>
+              <h3>2024 HBCU Smart Cities Impact Report</h3>
+              <button>See Details →</button>
+            </div>
+            <div class="card">
+              <h2 class="card-number">03</h2>
+              <h3>2023 HBCU Smart Cities Impact Report</h3>
+              <button>See Details →</button>
+            </div>
+            <div class="card">
+              <h2 class="card-number">04</h2>
+              <h3>2022 HBCU Smart Cities Impact Report</h3>
+              <button>See Details →</button>
+            </div>
+          </div>
+          <div class="button-flex">
+            <p class="bottom-text">
+              From North Carolina to South Carolina, cities are partnering with
+              PCF to accelerate innovation. Explore who’s already making an
+              impact.
+            </p>
+            <button class="view-all">
+              View All Demos <img src="images/arrow-right.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="fellows">
+        <img src="images/Frame 1321318552.png" alt="" />
+
+        <div class="info">
+          <h3>Meet the 2025 Fellows</h3>
+          <p>
+            Discover the innovators from this year’s North Carolina challenge,
+            shaping smarter cities through data and community-led solutions.
+          </p>
+        </div>
+        <button>View Fellows →</button>
+      </div>
+    </div>
+
+    <script>
+      const scrollCards = document.getElementById("scrollCards");
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+scrollCards.addEventListener("mousedown", (e) => {
+  isDown = true;
+  scrollCards.classList.add("active");
+  startX = e.pageX - scrollCards.offsetLeft;
+  scrollLeft = scrollCards.scrollLeft;
+});
+
+scrollCards.addEventListener("mouseleave", () => {
+  isDown = false;
+});
+
+scrollCards.addEventListener("mouseup", () => {
+  isDown = false;
+});
+
+scrollCards.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - scrollCards.offsetLeft;
+  const walk = (x - startX) * 1.5; // scroll speed
+  scrollCards.scrollLeft = scrollLeft - walk;
+});
+
+      
+    </script>
+  </body>
+</html>
