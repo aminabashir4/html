@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Insights Section (4 + 4 Cards Scroll)</title>
+    <title>Insights Section (Filterable Cards)</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -20,10 +20,10 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        font-family: "Montserrat", sans-serif;
       }
 
       .tag-btn-fellow {
+        font-family: "Montserrat", sans-serif;
         color: #343433;
         border: 1px solid #343433;
         border-radius: 24px;
@@ -46,6 +46,7 @@
       }
 
       .section-header p {
+        font-family: "Montserrat", sans-serif;
         max-width: 658px;
         color: #343434;
         line-height: 26.5px;
@@ -115,7 +116,7 @@
         gap: 17px;
         justify-content: left;
         transition: all 0.6s ease;
-        max-height: 290px; /* Show only first row */
+        max-height: 270px; /* Show only first row */
         overflow: hidden;
       }
 
@@ -156,7 +157,6 @@
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        transition: background-color 0.3s ease;
       }
 
       .outcome {
@@ -168,7 +168,6 @@
         background-color: #3f632f;
       }
 
-      /* Active outcome card */
       .card.active .outcome {
         background: #ffffff1a;
         color: #f2f2f2;
@@ -187,13 +186,30 @@
         background-color: #faa95e;
       }
 
-      /* Active collab card */
       .card.active .collab {
         background: #ffffff1a;
         color: #f2f2f2;
       }
 
       .card.active .collab .dot {
+        background-color: #f2f2f2;
+      }
+
+      .resources {
+        background: #e7efff;
+        color: #2c4f9e;
+      }
+
+      .resources .dot {
+        background-color: #2c4f9e;
+      }
+
+      .card.active .resources {
+        background: #ffffff1a;
+        color: #f2f2f2;
+      }
+
+      .card.active .resources .dot {
         background-color: #f2f2f2;
       }
 
@@ -229,13 +245,13 @@
       }
 
       p {
+        font-family: "Montserrat", sans-serif;
         font-size: 15px;
         line-height: 23px;
         font-weight: 500;
         color: #4d4d4c;
       }
 
-      /* Scroll Button */
       .scroll-btn {
         background: #00000014;
         border: 0.4px solid #000000;
@@ -249,8 +265,7 @@
         justify-content: center;
         cursor: pointer;
         position: absolute;
-        bottom: px;
-        z-index: 10px;
+        z-index: 10;
         left: 49%;
         transform: translateX(-50%);
         transition: all 0.3s ease;
@@ -265,8 +280,9 @@
       .scroll-btn.rotate img {
         transform: rotate(180deg);
       }
+
       .view-btn {
-        display: inline-block;
+        font-family: "Montserrat", sans-serif;
         background-color: #3f632f;
         color: white;
         border: none;
@@ -290,119 +306,98 @@
       .view-btn img {
         margin-left: 10px;
       }
+
+      /* Hide filtered cards */
+      .hidden {
+        display: none;
+      }
     </style>
   </head>
+
   <body>
     <div class="cards-wrapper">
-      <div class="">
-        <button class="tag-btn-fellow">Benefits</button>
-        <div class="section-header">
-          <h1>BENEFITS FOR YOUR CITY</h1>
-          <p>
-            Unlock practical outcomes, talent access, and partner resources
-            while addressing urgent community challenges.
-          </p>
-        </div>
+      <button class="tag-btn-fellow">Benefits</button>
+      <div class="section-header">
+        <h1>BENEFITS FOR YOUR CITY</h1>
+        <p>
+          Unlock practical outcomes, talent access, and partner resources while addressing urgent community challenges.
+        </p>
+      </div>
 
-        <div class="filter-bar">
-          <div class="filter-buttons">
-            <button class="tag-btn active">All</button>
-            <button class="tag-btn">Outcomes</button>
-            <button class="tag-btn">Collaboration</button>
-            <button class="tag-btn">Resources</button>
-          </div>
+      <div class="filter-bar">
+        <div class="filter-buttons">
+          <button class="tag-btn active" data-filter="all">All</button>
+          <button class="tag-btn" data-filter="outcome">Outcomes</button>
+          <button class="tag-btn" data-filter="collab">Collaboration</button>
+          <button class="tag-btn" data-filter="resources">Resources</button>
         </div>
       </div>
 
       <div class="cards-main-container">
         <div class="cards-container" id="cards">
-          <!-- 8 Cards -->
-          <div class="card active">
+          <!-- Cards -->
+          <div class="card active" data-category="outcome">
             <div class="status outcome"><span class="dot"></span>Outcome</div>
             <div class="icon"></div>
             <h3>Mobility & Traffic Insights</h3>
-            <p>
-              Use real-time analytics to optimize signal timing, reduce
-              congestion, and improve travel reliability.
-            </p>
+            <p>Use real-time analytics to optimize signal timing, reduce congestion, and improve travel reliability.</p>
           </div>
 
-          <div class="card">
+          <div class="card" data-category="outcome">
             <div class="status outcome"><span class="dot"></span>Outcome</div>
             <div class="icon"></div>
             <h3>Public Safety Signal Boost</h3>
-            <p>
-              Trigger timely alerts to first responders and city staff to
-              accelerate response and build community trust.
-            </p>
+            <p>Trigger timely alerts to first responders and city staff to accelerate response and build community trust.</p>
           </div>
 
-          <div class="card">
+          <div class="card" data-category="outcome">
             <div class="status outcome"><span class="dot"></span>Outcome</div>
             <div class="icon"></div>
             <h3>Climate & Resilience</h3>
-            <p>
-              Support air-quality, energy, and water use cases that advance
-              sustainability targets.
-            </p>
+            <p>Support air-quality, energy, and water use cases that advance sustainability targets.</p>
           </div>
 
-          <div class="card">
+          <div class="card" data-category="collab">
             <div class="status collab"><span class="dot"></span>Collab</div>
             <div class="icon"></div>
             <h3>HBCU Talent & Teams</h3>
-            <p>
-              Engage student teams and faculty advisors on research, design, and
-              prototyping sprints.
-            </p>
+            <p>Engage student teams and faculty advisors on research, design, and prototyping sprints.</p>
           </div>
 
-          <div class="card">
+          <div class="card" data-category="outcome">
             <div class="status outcome"><span class="dot"></span>Outcome</div>
             <div class="icon"></div>
             <h3>Smart Infrastructure</h3>
-            <p>
-              Analyze structural health data to extend asset lifespans and
-              optimize maintenance cycles.
-            </p>
+            <p>Analyze structural health data to extend asset lifespans and optimize maintenance cycles.</p>
           </div>
 
-          <div class="card">
+          <div class="card" data-category="outcome">
             <div class="status outcome"><span class="dot"></span>Outcome</div>
             <div class="icon"></div>
             <h3>Urban Sustainability</h3>
-            <p>
-              Advance renewable energy adoption and reduce carbon emissions in
-              cities.
-            </p>
+            <p>Advance renewable energy adoption and reduce carbon emissions in cities.</p>
           </div>
 
-          <div class="card">
-            <div class="status outcome"><span class="dot"></span>Outcome</div>
+          <div class="card" data-category="resources">
+            <div class="status resources"><span class="dot"></span>Resources</div>
             <div class="icon"></div>
-            <h3>Water Management</h3>
-            <p>
-              Monitor water quality and reduce waste through smart metering
-              solutions.
-            </p>
+            <h3>Data Sharing Platform</h3>
+            <p>Access shared datasets and dashboards for cross-department collaboration and decision-making.</p>
           </div>
 
-          <div class="card">
+          <div class="card" data-category="collab">
             <div class="status collab"><span class="dot"></span>Collab</div>
             <div class="icon"></div>
             <h3>Innovation Challenge</h3>
-            <p>
-              Partner with local universities and startups to develop scalable
-              urban tech solutions.
-            </p>
+            <p>Partner with local universities and startups to develop scalable urban tech solutions.</p>
           </div>
         </div>
       </div>
 
-      <!-- Scroll Button -->
       <div class="scroll-btn" id="scrollBtn">
         <img src="images/Icon(2).svg" alt="Scroll Arrow" />
       </div>
+
       <button class="view-btn">
         See Our City Partnerships <img src="images/arrow-right.svg" alt="" />
       </button>
@@ -411,12 +406,32 @@
     <script>
       const cardsContainer = document.getElementById("cards");
       const scrollBtn = document.getElementById("scrollBtn");
+      const filterButtons = document.querySelectorAll(".tag-btn");
+      const cards = document.querySelectorAll(".card");
       let expanded = false;
 
+      // Scroll toggle
       scrollBtn.addEventListener("click", () => {
         expanded = !expanded;
         cardsContainer.classList.toggle("expanded", expanded);
         scrollBtn.classList.toggle("rotate", expanded);
+      });
+
+      // Filtering
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const filter = btn.dataset.filter;
+          cards.forEach((card) => {
+            if (filter === "all" || card.dataset.category === filter) {
+              card.classList.remove("hidden");
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+        });
       });
     </script>
   </body>

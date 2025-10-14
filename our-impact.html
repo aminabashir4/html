@@ -8,12 +8,15 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
       }
 
       .section {
@@ -26,6 +29,7 @@
       }
       .tag-btn-fellow {
         color: #343433;
+        font-family: "Montserrat", sans-serif;
         border: 1px solid #343433;
         border-radius: 24px;
         padding: 5px 16px;
@@ -49,6 +53,7 @@
         max-width: 658px;
         color: #343434;
         line-height: 26.5px;
+        font-family: "Montserrat", sans-serif;
         font-size: 20px;
       }
       .section-header {
@@ -121,7 +126,7 @@
       }
 
       .card {
-        flex: 0 0 calc(50% - 28px); /* Two full cards + 20% of third visible */
+        flex: 0 0 calc(50% - 28px);
         background-color: #f5f5f5;
         border: 0.5px solid #676765;
         border-radius: 16px;
@@ -131,7 +136,7 @@
       }
 
       .cards::-webkit-scrollbar {
-        display: none; 
+        display: none;
       }
 
       .card img {
@@ -176,6 +181,7 @@
       }
 
       .card-desc {
+        font-family: "Montserrat", sans-serif;
         font-size: 13.3px;
         color: #343433;
         line-height: 148%;
@@ -209,6 +215,7 @@
         font-weight: 700;
         cursor: pointer;
         letter-spacing: -2%;
+        font-family: "Montserrat", sans-serif;
       }
 
       .view-btn:hover {
@@ -266,7 +273,8 @@
       </div>
 
       <div class="cards">
-        <div class="card">
+        <!-- Existing Card 1 -->
+        <div class="card" data-category="Sustainability">
           <img src="images/Frame 1321318512.png" alt="Pipe Census" />
           <div class="card-content-div">
             <div class="card-content">
@@ -288,8 +296,9 @@
           </div>
         </div>
 
-        <div class="card">
-          <img src="images/Frame 1321318512(1).png" alt="Pipe Census" />
+        <!-- Existing Card 2 -->
+        <div class="card" data-category="Digital Inclusion">
+          <img src="images/Frame 1321318512(1).png" alt="PYRA" />
           <div class="card-content-div">
             <div class="card-content">
               <div class="card-title-container">
@@ -309,22 +318,69 @@
             <img class="arrow-img" src="images/Icon(1).svg" alt="" />
           </div>
         </div>
-        <div class="card">
-          <img src="images/Frame 1321318512.png" alt="Pipe Census" />
+
+        <!-- Mobility Card -->
+        <div class="card" data-category="Mobility">
+          <img src="images/my-orca-app-banner.jpg" alt="Urban Transit Tracker" />
           <div class="card-content-div">
             <div class="card-content">
               <div class="card-title-container">
-                <h3 class="card-title">Pipe Census</h3>
+                <h3 class="card-title">Urban Transit Tracker</h3>
                 <div class="badge-flex">
-                  <span class="place-badge">1st Place</span>
-                  <span class="place-badge">Rocky Mount</span>
+                  <span class="place-badge">3rd Place</span>
+                  <span class="place-badge">Greensboro</span>
                 </div>
               </div>
               <p class="card-desc">
-                Pipe Census leverages vision-based AI and industry software APIs
-                to automate the identification, mapping, and classification of
-                underground water infrastructure, transforming a manual,
-                time-consuming process into an efficient digital solution.
+                Urban Transit Tracker enhances city transportation by using
+                real-time GPS and predictive algorithms to improve bus
+                scheduling and commuter experience through accessible mobile
+                data.
+              </p>
+            </div>
+            <img class="arrow-img" src="images/Icon(1).svg" alt="" />
+          </div>
+        </div>
+
+        <!-- Digital Inclusion Card -->
+        <div class="card" data-category="Digital Inclusion">
+          <img src="images/Picture3-itu.jpg" alt="ConnectEd" />
+          <div class="card-content-div">
+            <div class="card-content">
+              <div class="card-title-container">
+                <h3 class="card-title">ConnectEd</h3>
+                <div class="badge-flex">
+                  <span class="place-badge">Runner-Up</span>
+                  <span class="place-badge">Charlotte</span>
+                </div>
+              </div>
+              <p class="card-desc">
+                ConnectEd bridges the digital divide by creating localized
+                Wi-Fi mesh networks and educational resource hubs for
+                underserved communities to ensure equitable access to
+                information.
+              </p>
+            </div>
+            <img class="arrow-img" src="images/Icon(1).svg" alt="" />
+          </div>
+        </div>
+
+        <!-- Sustainability Card -->
+        <div class="card" data-category="Sustainability">
+          <img src="images/csm_Green_Metals_X-Pact_Eco_Grid_db3a0fdcac.webp" alt="EcoGrid" />
+          <div class="card-content-div">
+            <div class="card-content">
+              <div class="card-title-container">
+                <h3 class="card-title">EcoGrid</h3>
+                <div class="badge-flex">
+                  <span class="place-badge">1st Place</span>
+                  <span class="place-badge">Durham</span>
+                </div>
+              </div>
+              <p class="card-desc">
+                EcoGrid empowers cities to track and optimize their renewable
+                energy usage through AI-based monitoring tools and citizen
+                engagement dashboards.
               </p>
             </div>
             <img class="arrow-img" src="images/Icon(1).svg" alt="" />
@@ -339,10 +395,21 @@
 
     <script>
       const buttons = document.querySelectorAll(".tag-btn");
+      const cards = document.querySelectorAll(".card");
+
       buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
           buttons.forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
+
+          const category = btn.textContent.trim();
+          cards.forEach((card) => {
+            if (category === "All" || card.dataset.category === category) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
         });
       });
     </script>

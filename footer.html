@@ -4,35 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Footer Section</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
       }
 
       body {
         background-color: #f5f5f5;
+        overflow-x: hidden; 
       }
+
       .main-div {
+        font-family: "Montserrat", sans-serif;
         margin: 13px;
       }
+
       footer {
         background-color: #343433;
         color: #fff;
         padding: 64px 112px 51px 112px;
         border-radius: 22px 22px 0px 0px;
+        max-width: 100%;
+        overflow-x: hidden; 
       }
 
       .footer-container {
         display: grid;
         grid-template-columns: 363px 235px 225px 225px;
         gap: 72px;
+        max-width: 100%;
       }
 
       .footer-logo img {
         margin-bottom: 32px;
+        max-width: 100%; /* ✅ Ensures image doesn’t overflow */
+        height: auto;
       }
 
       .footer-logo p {
@@ -41,11 +53,13 @@
         line-height: 24px;
         letter-spacing: -2%;
         margin-bottom: 32px;
+        font-family: "Montserrat", sans-serif;
       }
 
       .social-icons {
         gap: 18px;
         display: flex;
+        flex-wrap: wrap; /* ✅ Ensures icons wrap if needed */
       }
 
       .social-icons a img {
@@ -95,9 +109,21 @@
         border-radius: 0px 0px 22px 22px;
       }
 
+      /* ✅ RESPONSIVE FIXES — no layout change */
+      @media (max-width: 1200px) {
+        .footer-container {
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 50px;
+        }
+      }
+
       @media (max-width: 900px) {
+        footer {
+          padding: 50px;
+        }
         .footer-container {
           grid-template-columns: 1fr 1fr;
+          gap: 40px;
         }
       }
 
@@ -107,6 +133,7 @@
         }
         .footer-container {
           grid-template-columns: 1fr;
+          gap: 30px;
         }
       }
     </style>
@@ -168,6 +195,7 @@
           </div>
         </div>
       </footer>
+
       <div class="footer-bottom">
         © 2025 Pathway Community Foundation. All rights reserved.
       </div>

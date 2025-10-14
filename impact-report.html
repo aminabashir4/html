@@ -8,6 +8,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
@@ -20,6 +24,8 @@
       }
 
       .section-container {
+        background: #f5f5f5;
+        border-radius: 22px;
         max-width: 1488px;
         padding: 55px 53px;
         margin: auto;
@@ -28,6 +34,7 @@
         max-width: 1097px;
       }
       .tag {
+        font-family: "Montserrat", sans-serif;
         display: inline-block;
         font-size: 14px;
         line-height: 19px;
@@ -54,6 +61,7 @@
         font-size: 18px;
         color: #343433;
         margin-bottom: 31px;
+        font-family: "Montserrat", sans-serif;
       }
 
       .report-section {
@@ -76,6 +84,7 @@
         width: 553px;
       }
       .impact-button {
+        font-family: "Montserrat", sans-serif;
         border: 2px solid #f2f2f2;
         background: #0000002b;
         padding: 5px 16px;
@@ -103,6 +112,7 @@
       }
 
       .main-card .stats {
+        font-family: "Montserrat", sans-serif;
         display: flex;
         color: #e6e6e5;
         gap: 9px;
@@ -114,12 +124,14 @@
       }
 
       .main-card .stats strong {
+        font-family: "Montserrat", sans-serif;
         color: #e6e6e5;
         font-weight: 71%;
         font-size: 42px;
       }
 
       .main-card .stats div {
+        font-family: "Montserrat", sans-serif;
         flex: 1;
         padding: 19px;
         border: 0.5px solid #e6e6e5;
@@ -128,6 +140,7 @@
       }
 
       .download-button {
+        font-family: "Montserrat", sans-serif;
         display: inline-block;
         background-color: #3f632f;
         color: white;
@@ -156,21 +169,20 @@
         margin-top: 10px;
       }
       .scroll-cards {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 15px;
-  padding-bottom: 10px;
-  scroll-snap-type: x mandatory;
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: 15px;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
 
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
-}
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
 
-.scroll-cards::-webkit-scrollbar {
-  display: none; 
-}
-
+      .scroll-cards::-webkit-scrollbar {
+        display: none;
+      }
 
       .scroll-cards::-webkit-scrollbar-thumb {
         background: #ccc;
@@ -178,7 +190,7 @@
       }
 
       .card {
-        flex: 0 0 329px; 
+        flex: 0 0 329px;
         border: 0.5px solid #676765;
         border-radius: 16px;
         padding: 10px;
@@ -211,6 +223,7 @@
         border-radius: 11px;
       }
       .main-card .card-number {
+        font-family: "Montserrat", sans-serif;
         border: 1px solid #f2f2f2;
         font-size: 20px;
         width: fit-content;
@@ -235,6 +248,7 @@
       .card button {
         background: #4d823614;
         border: 1px solid var(--Primary-Green, #3f632f);
+        font-family: "Poppins", sans-serif;
         color: #3f632f;
         padding: 8px 16px;
         border-radius: 24px;
@@ -251,6 +265,7 @@
         justify-content: space-between;
       }
       .view-all {
+        font-family: "Montserrat", sans-serif;
         display: inline-block;
         background-color: #3f632f;
         color: white;
@@ -276,6 +291,7 @@
         margin-left: 10px;
       }
       .bottom-text {
+        font-family: "Montserrat", sans-serif;
         font-size: 15px;
         color: #343433;
         font-weight: 500;
@@ -309,6 +325,7 @@
       }
 
       .fellows .info p {
+        font-family: "Montserrat", sans-serif;
         font-size: 15px;
         color: #4d4d4c;
         line-height: 23px;
@@ -316,6 +333,7 @@
       }
 
       .fellows button {
+        font-family: "Poppins", sans-serif;
         background: #4d823614;
         border: 1px solid var(--Primary-Green, #3f632f);
         color: #3f632f;
@@ -353,7 +371,8 @@
             <div class="card-number">01</div>
             <button class="impact-button">Impact report</button>
           </div>
-          <img class="book-img"
+          <img
+            class="book-img"
             src="images/Free_A4_Brochure_Mockup_5_1-removebg-preview.png"
             alt="Report Cover"
           />
@@ -419,34 +438,32 @@
     <script>
       const scrollCards = document.getElementById("scrollCards");
 
-let isDown = false;
-let startX;
-let scrollLeft;
+      let isDown = false;
+      let startX;
+      let scrollLeft;
 
-scrollCards.addEventListener("mousedown", (e) => {
-  isDown = true;
-  scrollCards.classList.add("active");
-  startX = e.pageX - scrollCards.offsetLeft;
-  scrollLeft = scrollCards.scrollLeft;
-});
+      scrollCards.addEventListener("mousedown", (e) => {
+        isDown = true;
+        scrollCards.classList.add("active");
+        startX = e.pageX - scrollCards.offsetLeft;
+        scrollLeft = scrollCards.scrollLeft;
+      });
 
-scrollCards.addEventListener("mouseleave", () => {
-  isDown = false;
-});
+      scrollCards.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
 
-scrollCards.addEventListener("mouseup", () => {
-  isDown = false;
-});
+      scrollCards.addEventListener("mouseup", () => {
+        isDown = false;
+      });
 
-scrollCards.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - scrollCards.offsetLeft;
-  const walk = (x - startX) * 1.5; // scroll speed
-  scrollCards.scrollLeft = scrollLeft - walk;
-});
-
-      
+      scrollCards.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - scrollCards.offsetLeft;
+        const walk = (x - startX) * 1.5; // scroll speed
+        scrollCards.scrollLeft = scrollLeft - walk;
+      });
     </script>
   </body>
 </html>
