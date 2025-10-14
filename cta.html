@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send Us a Message</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "MTN Brighter Sans";
+        src: local("Arial"), local("Helvetica");
+        font-weight: 400;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .main-container {
+        background-color: #fff;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      .container {
+        font-family: "Montserrat", sans-serif;
+        max-width: 1381px;
+        width: 100%;
+      }
+
+      .main-heading {
+        font-family: "MTN Brighter Sans", sans-serif;
+        color: #3f632f;
+        margin-bottom: 12px;
+        font-size: 55px;
+        line-height: 53px;
+        letter-spacing: -0.06em;
+      }
+
+      .main-para {
+        color: #343433;
+        font-size: 18px;
+        margin-bottom: 34px;
+      }
+
+      .contact-section {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        width: 100%;
+      }
+
+      .contact-left,
+      .contact-right {
+        flex: 1 1 50%;
+        max-width: 50%;
+        border-radius: 12px;
+      }
+
+      /* LEFT SIDE */
+      .contact-left {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-left img {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+
+      .contact-cards {
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
+
+      .contact-card {
+        border: 0.5px solid #e6e6e5;
+        color: #fff;
+        background: #0000000d;
+        padding: 19px;
+        border-radius: 12px;
+        width: 214.83px;
+        backdrop-filter: blur(10px);
+      }
+
+      .contact-card h4 {
+        color: #e6e6e5;
+        font-family: "MTN Brighter Sans", sans-serif;
+        font-size: 28px;
+        margin-bottom: 7px;
+        font-weight: 600;
+      }
+
+      .contact-card p {
+        font-size: 15px;
+        color: #e6e6e5;
+        line-height: 23px;
+      }
+
+      /* RIGHT SIDE */
+      .contact-right {
+        border: 0.5px solid #b1b1af;
+        background-color: #3f632f;
+        border-radius: 12px;
+        padding: 41px 19px 19px 19px;
+        color: #fff;
+      }
+
+      form label {
+        display: block;
+        font-size: 14px;
+        color: #e6e6e5;
+        line-height: 15.83px;
+        letter-spacing: -2%;
+        margin-bottom: 6px;
+        font-weight: 500;
+      }
+
+      .form-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group input,
+      .form-group select,
+      textarea {
+        width: 100%;
+        padding: 13px 14px;
+        border-radius: 12.5px;
+        border: 0.83px solid #b3b3b2;
+        background: #00000054;
+        color: #fff;
+        outline: none;
+      }
+
+      .form-group input::placeholder,
+      textarea::placeholder {
+        color: #B3B3B2;
+        font-size: 15.33px;
+      }
+
+      textarea {
+        grid-column: span 2;
+        resize: none;
+        min-height: 202.5px;
+        margin-bottom: 40px;
+      }
+
+      .submit-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #faa95e;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 12px;
+        color: #3f632f;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .submit-btn img {
+        width: 16px;
+        height: 16px;
+      }
+
+      .submit-btn:hover {
+        background-color: #f2934f;
+      }
+
+      /* Responsive */
+      @media (max-width: 1200px) {
+        .main-heading {
+          font-size: 45px;
+          line-height: 48px;
+        }
+
+        .main-para {
+          font-size: 16px;
+        }
+
+        .contact-card h4 {
+          font-size: 24px;
+        }
+
+        .contact-card p {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .contact-section {
+          flex-direction: column;
+        }
+         .contact-left img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+
+      .contact-card h4 {
+        color: #343433;
+        font-family: "MTN Brighter Sans", sans-serif;
+        font-size: 28px;
+        margin-bottom: 7px;
+        font-weight: 600;
+      }
+
+      .contact-card p {
+        font-size: 15px;
+        color: #343434;
+        line-height: 23px;
+      }
+
+        .contact-left,
+        .contact-right {
+          max-width: 100%;
+        }
+
+        .contact-right {
+          margin-top: 20px;
+        }
+
+        .contact-cards {
+          position: static;
+          margin-top: 15px;
+          justify-content: center;
+        }
+
+        .form-group {
+          grid-template-columns: 1fr;
+        }
+
+        textarea {
+          min-height: 180px;
+        }
+
+        .main-heading {
+          text-align: center;
+          font-size: 42px;
+        }
+
+        .main-para {
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 20px 10px;
+        }
+
+        .main-heading {
+          font-size: 34px;
+          line-height: 40px;
+        }
+
+        .main-para {
+          font-size: 15px;
+        }
+
+        .contact-card {
+          width: 100%;
+        }
+
+        .contact-right {
+          padding: 25px 15px;
+        }
+
+        .submit-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .main-heading {
+          font-size: 28px;
+          line-height: 34px;
+        }
+
+        .contact-card h4 {
+          font-size: 20px;
+        }
+
+        .contact-card p {
+          font-size: 13px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+  <div class="main-container">
+    <div class="container">
+      <h2 class="main-heading">SEND US A MESSAGE</h2>
+      <p class="main-para">
+        Use the form to contact our team. We’ll respond within 2–3 business
+        days.
+      </p>
+
+      <div class="contact-section">
+        <!-- LEFT SIDE -->
+        <div class="contact-left">
+          <img src="images/C7369.00_06_07_09.Still096.png" alt="Team" />
+          <div class="contact-cards">
+            <div class="contact-card">
+              <h4>Head Office</h4>
+              <p>123 Innovation Ave<br />Raleigh, NC 27601</p>
+            </div>
+            <div class="contact-card">
+              <h4>Phone</h4>
+              <p>+1 (919) 555-1234<br />Mon–Fri, 9am–5pm</p>
+            </div>
+            <div class="contact-card">
+              <h4>Email</h4>
+              <p>
+                info@pathwayoz.com<br />
+                press@pathwayoz.com
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="contact-right">
+          <form id="contactForm">
+            <div class="form-group">
+              <div class="input-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Enter full name"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter email address"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label for="organization">Organization / City</label>
+                <input
+                  type="text"
+                  id="organization"
+                  placeholder="Enter organization / city"
+                />
+              </div>
+
+              <div class="input-group">
+                <label for="interest">Area of Interest</label>
+                <select id="interest">
+                  <option value="">-- Select --</option>
+                  <option value="partnerships">Partnerships</option>
+                  <option value="careers">Careers</option>
+                  <option value="general">General Inquiry</option>
+                </select>
+              </div>
+
+              <div class="input-group" style="grid-column: span 2">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  placeholder="Enter message"
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              Submit <img src="images/arrow-right(1).svg" alt="→" />
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Your message has been submitted successfully!");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>

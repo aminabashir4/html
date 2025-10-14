@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calling Cities in North Carolina</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "MTN Brighter Sans";
+        src: local("Arial"), local("Helvetica");
+        font-weight: 400;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        color: #333;
+        padding: 69px 75px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 44px;
+      }
+
+      .left-section,
+      .right-section {
+        flex: 1 1 50%;
+        max-width: 50%;
+      }
+
+      /* LEFT SIDE */
+      .partner-btn {
+        font-family: "Montserrat", sans-serif;
+        color: #343433;
+        border: 1px solid #343433;
+        border-radius: 20px;
+        padding: 5px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        display: inline-block;
+      }
+
+      .heading {
+        font-size: 100px;
+        color: #faa95e;
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -2px;
+        font-family: "MTN Brighter Sans", sans-serif;
+        margin-bottom: 24px;
+        word-break: break-word;
+      }
+
+      .section-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .description {
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        color: #343433;
+        max-width: 467px;
+        margin-bottom: 24px;
+      }
+      .why-join {
+        background-color: #fbfbfb;
+        border: 0.5px solid #b1b1af;
+        border-radius: 12px;
+        padding: 16px;
+        max-width: 467px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+      }
+
+      .why-join h3 {
+        font-family: "MTN Brighter Sans", sans-serif;
+        font-size: 22px;
+        color: #3f632f;
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+
+      .why-join ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .why-join li {
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        line-height: 23px;
+        color: #4d4d4c;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .why-join li img {
+        width: 16px;
+        height: 16px;
+        margin-top: 4px;
+      }
+
+      /* RIGHT SIDE */
+      .cta-section {
+        background: #3f632f;
+        border-radius: 17px;
+        border: 0.5px solid #b1b1af;
+        padding: 24px;
+        color: white;
+      }
+
+      .rectangle {
+        background-color: #dddee2;
+        height: 51px;
+        width: 51px;
+        border-radius: 9px;
+        margin-bottom: 12px;
+      }
+
+      .right-section h3 {
+        font-family: "MTN Brighter Sans", sans-serif;
+        color: #f2f2f2;
+        font-size: 23px;
+        font-weight: 500;
+        margin-bottom: 32px;
+      }
+
+      label {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 6px;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 13px 14px;
+        border-radius: 12px;
+        border: 1px solid #b3b3b2;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 15px;
+        outline: none;
+        transition: 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        border-color: #faa95e;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .form-group input::placeholder {
+        color: #ccc;
+      }
+
+      .form-flex {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .form-flex .form-group {
+        flex: 1;
+      }
+
+      .submit-btn {
+        margin-top: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-family: "Montserrat", sans-serif;
+        background-color: #faa95e;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-size: 15px;
+        color: #3f632f;
+        cursor: pointer;
+        font-weight: 700;
+        transition: 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background-color: #fbbb80;
+      }
+
+      .note {
+        font-family: "Montserrat", sans-serif;
+        margin-top: 24px;
+        background: #cce8c080;
+        border: 0.5px solid #3f632f;
+        color: #3f632f;
+        padding: 14px;
+        border-radius: 12px;
+        font-size: 15px;
+        line-height: 23px;
+      }
+
+      /* TABLET VIEW */
+      @media (max-width: 1024px) {
+          .left-section,
+      .right-section {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+        body {
+          flex-direction: column;
+          padding: 40px 5%;
+        }
+
+        .left-section,
+        .right-section {
+          max-width: 100%;
+        }
+        .description {
+          max-width: 100%;
+        }
+        .why-join {
+          max-width: 100%;
+        }
+        .heading {
+          font-size: 72px;
+          line-height: 1.1;
+        }
+
+        .section-flex {
+          flex-direction: column;
+        }
+      }
+
+      /* MOBILE VIEW */
+      @media (max-width: 600px) {
+        body {
+          padding: 30px 6%;
+          gap: 30px;
+        }
+
+        .heading {
+          font-size: 42px;
+          line-height: 1.1;
+          margin-bottom: 16px;
+        }
+
+        .partner-btn {
+          font-size: 12px;
+          padding: 4px 12px;
+        }
+
+        .why-join {
+          padding: 12px;
+        }
+
+        .why-join h3 {
+          font-size: 18px;
+        }
+
+        .cta-section {
+          padding: 18px;
+        }
+
+        .right-section h3 {
+          font-size: 20px;
+          margin-bottom: 24px;
+        }
+
+        .form-flex {
+          flex-direction: column;
+        }
+
+        .submit-btn {
+          width: 100%;
+          font-size: 14px;
+          margin-top: 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- LEFT SECTION -->
+    <div class="left-section">
+      <div class="partner-btn">Partner With Us</div>
+      <div class="heading">Calling Cities in North Carolina</div>
+
+      <div class="section-flex">
+        <div>
+          <p class="description">
+            Our next HBCU Smart Cities Challenge will take place in North
+            Carolina. We invite municipalities to apply and host student fellows
+            tackling real urban challenges.
+          </p>
+
+          <div class="why-join">
+            <h3>Why Join?</h3>
+            <ul>
+              <li>
+                <img src="images/icons8_ok 1.svg" alt="check" />
+                Get dedicated fellows solving local challenges.
+              </li>
+              <li>
+                <img src="images/icons8_ok 1.svg" alt="check" />
+                Access rapid prototypes and community-driven pilots.
+              </li>
+              <li>
+                <img src="images/icons8_ok 1.svg" alt="check" />
+                Showcase innovation at the statewide North Carolina Challenge
+                event.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="logo">
+          <img
+            src="images/Group 1000004322.png"
+            alt="North Carolina logo"
+            width="180"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SECTION -->
+    <div class="right-section">
+      <div class="cta-section">
+        <div class="rectangle"></div>
+        <h3>Apply as a Host City</h3>
+        <form id="hostCityForm">
+          <div class="form-group">
+            <label for="city">City / Municipality</label>
+            <input
+              id="city"
+              type="text"
+              placeholder="Enter city name"
+              required
+            />
+          </div>
+
+          <div class="form-flex">
+            <div class="form-group">
+              <label for="contact">Contact Person</label>
+              <input
+                id="contact"
+                type="text"
+                placeholder="Full Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                id="email"
+                type="email"
+                placeholder="example@email.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="interest">Challenge Area of Interest</label>
+            <select id="interest" required>
+              <option value="">Select Area</option>
+              <option>Smart Mobility</option>
+              <option>Clean Energy</option>
+              <option>Public Safety</option>
+              <option>Waste Management</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Submit Application <img src="images/arrow-right(1).svg" alt="" />
+          </button>
+        </form>
+      </div>
+
+      <div class="note">
+        <strong>Note:</strong> Applications are open until April 30, 2025.
+        Selected cities will be paired with fellows in June.
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("hostCityForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Application submitted successfully!");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
